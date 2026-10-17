@@ -2610,3 +2610,50 @@ svg {
   }
 
 }
+
+/* Language selector: uses the existing palette and keeps the original layout. */
+.nav { gap: 16px; }
+.language-switcher {
+  display: inline-flex;
+  flex-shrink: 0;
+  padding: 4px;
+  gap: 2px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+}
+.language-switcher button {
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 700;
+  min-height: 36px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.language-switcher button:hover,
+.language-switcher button[aria-pressed="true"] {
+  color: var(--text);
+  background: rgba(139, 108, 255, .22);
+}
+.language-switcher button:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+}
+.hero-grid > *, .stat-card > *, .project-card { min-width: 0; }
+html:not([lang="en"]) .hero h1 { overflow-wrap: anywhere; }
+@media (max-width: 900px) and (min-width: 761px) {
+  .nav-links { gap: 14px; }
+}
+@media (max-width: 760px) {
+  .language-switcher { margin-left: auto; }
+  .nav-links { flex-wrap: wrap; }
+}
+@media (max-width: 380px) {
+  .nav { gap: 8px; }
+  .language-switcher button { padding: 8px; }
+}
+
